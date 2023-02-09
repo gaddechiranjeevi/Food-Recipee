@@ -1,0 +1,54 @@
+.header{
+    padding: 20px;
+    background-color: azure;
+}
+.home{
+    position: absolute;
+    top: 39px;
+    border: none;
+    font-weight: 400;
+    width: 8%;
+    left: 62%;
+    height: 35px;
+}
+.saved{
+    position: absolute;
+    top: 39px;
+    left: 75%;
+    font-weight: 400;
+    background-color: whitesmoke;
+    width: 9%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+}
+.Signout{
+    position: absolute;
+    top: 39px;
+    border: none;
+    font-weight: 400;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    width: 8%;
+    height: 35px;
+    left: 89%;
+}
+.selected{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: text;
+}
+.input, .btn{
+    margin-left: 40%;
+    width: 280px;
+}
+.btn{
+    width: 100px !important;
+    margin-left: 46.1%;
+    margin-top: 5px;
+    color: white;
+    border: none;
+    background-color: blue;
+}

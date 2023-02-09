@@ -1,0 +1,23 @@
+.container{
+    position: absolute;
+    background-color: whitesmoke;
+    top: 120px;
+    left: 420px;
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 5px;
+}
+.container button{
+    margin-top: 10px;
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+.container input{
+    height: 35px;
+}
+.display{
+    padding: 25px;
+    padding-left: 100px;
+}
