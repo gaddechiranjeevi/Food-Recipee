@@ -15,7 +15,7 @@ const Recipe=({data})=>{
        image : data.recipe.image,
        name  : data.recipe.label,
        type :  data.recipe.cuisineType[0],
-       ingredients : data.recipe.ingredientLines,
+       ingredients : data.recipe.ingredientLines.map(ingredient => ingredient),
        recipe : data.recipe.url
     })
     alert('saved sucessfully');
