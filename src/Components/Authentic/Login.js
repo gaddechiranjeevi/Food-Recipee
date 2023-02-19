@@ -12,18 +12,21 @@ const Login=()=>{
 
   const SignHandler=()=>{
     signInWithEmailAndPassword(auth, email, password)
-    .then(auth=>{navigate('/home')})
-    alert('Login succesfull')
+    .then(auth=>{navigate('/home')
+       alert("Login Succesful")})
     .catch(error=>{
       console.error(error)
-      alert('Email not found');
+       alert(error);
     })
   }
   const HandleRegister=()=>{
      createUserWithEmailAndPassword(auth,email,password)
-     .then(auth =>{navigate('/home')})
-     window.alert('Account Created')
-     .catch(error=>console.error(error))
+     .then(auth =>{navigate('/home')
+        alert('Account Created')})
+     .catch(error=>{
+        alert(error);
+    })
+
   }
 
   return (

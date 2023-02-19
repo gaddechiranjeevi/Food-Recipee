@@ -10,9 +10,7 @@ const SavedRecipe=()=>{
         setData([]);
            const data = snapshot.val();
            if(data !== null){
-            Object.values(data).map((todo)=>{
-                setData((oldArray)=>[...oldArray,todo]);
-            })
+            setData((oldArray) => [...oldArray, ...Object.values(data)]);
            }
        });
     }, []);
@@ -22,20 +20,21 @@ const SavedRecipe=()=>{
     };
   
     return (
-      <div className="container">
+      data.length >= 1 ? 
+      <div className="container"><br/>
         {data.map((item) => (
           <div key={item.uuid}>
             <img src={item.image} alt={item.name} />
             <h5>{item.name}</h5>
             <p>{item.type}</p>
             <p style={{fontWeight:"bold"}}>Ingredients{item.ingredients.map((list)=>(
-                <ul style={{textAlign:"left",fontWeight:"normal"}}>{list}</ul>
+                <li style={{textAlign:"left",fontWeight:"normal"}}>{list}</li>
             ))}</p>
-            <a class="card-text" target="recipe" href={item.recipe}>Recipe</a><br/>
-            <button class="btn btn-secondary"onClick={()=>HandleDelete(item)}>Delete</button>
+            <a class="card-text" target="recipe" href={item.recipe}>Recipe</a><br/><br/>
+            <button class="center btn btn-secondary"onClick={()=>HandleDelete(item)}>Delete</button><br/><hr/>
           </div>
         ))}
-      </div>
-    );
+      </div> : <div><br/><h2 className="text-center">No Saved Recipee's...</h2></div>
+);
 }
 export default SavedRecipe;

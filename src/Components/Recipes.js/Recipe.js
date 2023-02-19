@@ -8,19 +8,18 @@ import classes from "../Authentic/Login.module.css";
 const Recipe=({data})=>{
    
        
- const HandleSave=(data)=>{
+    const HandleSave=(data)=>{
         const uuid = uid();
     set(ref(database, `${uuid}`), {
        uuid,
        image : data.recipe.image,
        name  : data.recipe.label,
        type :  data.recipe.cuisineType[0],
-       ingredients : data.recipe.ingredientLines,
+       ingredients : data.recipe.ingredientLines.map(ingredient => ingredient),
        recipe : data.recipe.url
     })
     alert('saved sucessfully');
 }
-
     return(
         <div  className={classes.display}>
             <div className="row">
@@ -32,8 +31,9 @@ const Recipe=({data})=>{
                         <center>
                             <h5 class="card-title">{data.recipe.label}</h5>
                             <p class="card-text">{data.recipe.cuisineType}</p>
-                            <p class="card-text" style={{fontWeight:"bold"}}>Ingredients{data.recipe.ingredientLines.map((list)=>(
-                                <ul style={{textAlign:"left",fontWeight:"normal"}}>{list}</ul>
+                            <h6 class='card-text'>Ingredients</h6>
+                            <p className={classes.card} style={{fontWeight:"bold"}}>{data.recipe.ingredientLines.map((list)=>(
+                                <li style={{textAlign:"left",fontWeight:"normal"}}>{list}</li>
                             ))}</p>
                             <a class="card-text" target="recipe" href={data.recipe.url}>Recipe</a><br/>
                             <button onClick={()=>HandleSave(data)} className="btn btn-primary">Save</button>
