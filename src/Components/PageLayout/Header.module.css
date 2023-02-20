@@ -43,12 +43,17 @@
 .input, .btn{
     margin-left: 40%;
     width: 280px;
+    
 }
 .btn{
     width: 100px !important;
     margin-left: 46.1%;
-    margin-top: 5px;
+    margin-top: 10px;
     color: white;
-    border: none;
+    border-radius: 5px;
     background-color: blue;
+}
+.btn:onclick{
+    background-color: greenyellow;
+    color: black;
 }
