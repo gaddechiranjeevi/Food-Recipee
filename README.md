@@ -1,1 +1,1 @@
-Go Live by using :- https://food-recipee-ff207.web.app/
+Go Live by using :- https://friendly-snickerdoodle-9a1ddd.netlify.app/
